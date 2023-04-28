@@ -7,7 +7,7 @@ To get started with this application, follow these steps:
 
 1. Clone the repository to your local machine:
 
-   git clone https://github.com/yourusername/worldcupapp.git
+   git clone https://github.com/YassineOuhadi/World-Cup-App.git
    
 2. Navigate to the root directory of the application:
 
@@ -30,7 +30,7 @@ To run this application in a Docker container, follow these steps:
 
 1. Clone the repository to your local machine:
 
-   git clone https://github.com/yourusername/worldcupapp.git
+   git clone https://github.com/YassineOuhadi/World-Cup-App.git
    
 2. Navigate to the root directory of the application:
 
