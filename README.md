@@ -1,4 +1,5 @@
 # World-Cup-App
+Node js, Express js, Sequelize js, Fuse js, JWT, Oracle
 
 ![w1](https://user-images.githubusercontent.com/109771302/235133800-db715f4d-db85-4e78-927a-e5c372b27b53.png)
 
@@ -42,7 +43,5 @@
 
 ![w19](https://user-images.githubusercontent.com/109771302/235134327-9272237c-a1ce-47bb-b81e-d2bebbe2cd59.png)
 
-
-
-
-
+Build the docker container using docker build -t worldcupapp .
+Run the container using docker run -p 3000:3000 worldcupapp
