@@ -94,4 +94,4 @@ To run this application in a Docker container, follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENCE](LICENCE.txt) file for details.
+This project is licensed under the MIT License - see the [LICENCE](https://github.com/YassineOuhadi/World-Cup-App/blob/acbff00f557a77f71dc715d65e14c6299fc59ce8/LICENCE.txt) file for details.
