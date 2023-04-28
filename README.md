@@ -92,3 +92,6 @@ To run this application in a Docker container, follow these steps:
 ![w19](https://user-images.githubusercontent.com/109771302/235134327-9272237c-a1ce-47bb-b81e-d2bebbe2cd59.png)
 
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
