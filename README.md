@@ -44,5 +44,5 @@ Node js, Express js, Sequelize js, Fuse js, JWT, Oracle
 ![w19](https://user-images.githubusercontent.com/109771302/235134327-9272237c-a1ce-47bb-b81e-d2bebbe2cd59.png)
 
 
-- Build the docker container using docker build -t worldcupapp .
+- Build the docker container using docker build -t worldcupapp .\n
 - Run the container using docker run -p 3000:3000 worldcupapp
