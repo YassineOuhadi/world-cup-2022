@@ -1,0 +1,935 @@
+<%
+    let PAYS = null;
+	let ID_PAYS = null;
+    var i=0;
+    ORGANISATEURS.forEach(function(ORGANISATEUR){
+	if(ORGANISATEUR.ID_COUPE_MONDE==WORLDCUP.ID){
+    if(i==0){
+         PAYS=ORGANISATEUR.pays.NOM;
+		 ID_PAYS=ORGANISATEUR.pays.ID;
+    }
+    else{
+        PAYS+=' ,'+ORGANISATEUR.pays.NOM;
+    };
+    i++;
+    };
+    });
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Home</title>	
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/chosen.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/color.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/costum.css">
+	<link rel="stylesheet" href="assets/css/cup.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+<style>
+  .product-style-1 .product-info .wrap-btn a::after, .primary .menu-item.home-icon, .center-section .wrap-search-form button, .wrap-banner .banner-link, .wrap-main-slide .slide-1 .btn-link, .wrap-main-slide .slide-3 .btn-link, .product-style-2 .product-thumnail .wrap-btn .function-link:hover, .wrap-footer-content .wrap-function-info, .wrap-newletter-footer .btn-submit, .wrap-footer-item .social-network ul li a:hover, .product-style-3 a.add-to-cart:hover, .widget.filter-widget .inline-round li a:hover, .widget.filter-widget .inline-round li a.active, .wrap-login-item .form-item .btn, .wrap-contacts .contact-box input[type="submit"], .wrap-icon-box .icon-box-item i, .aboutus-info.style-small-left .list-showups label input[type="radio"]:checked + span.check-box, .wrap-pagination-info .page-numbers li .page-number-item.current, .wrap-articles article .info a.btn-to-post:hover, .checkout-info .btn-checkout, .post-footer .comment-form fieldset.input-field input[type="submit"], .wrap-product-detail .advance-info .tab-control a.active, #review_form_wrapper #review_form .comment-form p.form-submit input[type="submit"], .wrap-product-detail .detail-info .wrap-butons .add-to-cart:hover, .wrap-product-detail .detail-info .quantity-input .btn:hover, .summary-item .btn, .choose-payment-methods .payment-method input[type="radio"]:checked + span::before, .main-info-area .right-section .wrap-icon-section.minicart .index {
+  background-color: var(--bl2);
+  border-radius: 7px;
+}
+.widget.widget-tag-clouds ul li a:hover, .product-list-style .advance-info .add-to-cart:hover, .product-style-3 a.add-to-cart:hover, .widget.filter-widget .inline-round li a:hover, .widget.filter-widget .inline-round li a.active, .wrap-pagination-info .page-numbers li .page-number-item.current, .wrap-pagination-info .page-numbers li .page-number-item:hover, .aboutus-info.style-small-left .list-showups label input[type="radio"]:checked + span.check-box, .wrap-articles article .info a.btn-to-post:hover, .wrap-footer-content .wrap-function-info .fc-info-item {
+  border-color: var(--bl2) !important;
+}
+.product-style-1 .product-info .wrap-btn a::after, .primary .menu-item.home-icon, .center-section .wrap-search-form button, .wrap-banner .banner-link, .wrap-main-slide .slide-1 .btn-link, .wrap-main-slide .slide-3 .btn-link, .product-style-2 .product-thumnail .wrap-btn .function-link:hover, .wrap-footer-content .wrap-function-info, .wrap-newletter-footer .btn-submit, .wrap-footer-item .social-network ul li a:hover, .product-style-3 a.add-to-cart:hover, .widget.filter-widget .inline-round li a:hover, .widget.filter-widget .inline-round li a.active, .wrap-login-item .form-item .btn, .wrap-contacts .contact-box input[type="submit"], .wrap-icon-box .icon-box-item i, .aboutus-info.style-small-left .list-showups label input[type="radio"]:checked + span.check-box, .wrap-pagination-info .page-numbers li .page-number-item.current, .wrap-articles article .info a.btn-to-post:hover, .checkout-info .btn-checkout, .post-footer .comment-form fieldset.input-field input[type="submit"], .wrap-product-detail .advance-info .tab-control a.active, #review_form_wrapper #review_form .comment-form p.form-submit input[type="submit"], .wrap-product-detail .detail-info .wrap-butons .add-to-cart:hover, .wrap-product-detail .detail-info .quantity-input .btn:hover, .summary-item .btn, .choose-payment-methods .payment-method input[type="radio"]:checked + span::before, .main-info-area .right-section .wrap-icon-section.minicart .index {
+  background: var(--bl2);
+    background-color: var(--bl2);
+}
+.has-child-cate .toggle-control:hover::after, .has-child-cate .toggle-control:hover::before, .widget.filter-widget .vertical-list li a.btn-control:hover::before, .product-list-style .advance-info .add-to-cart:hover, .detail-media .flex-control-nav .owl-nav button:hover, .wrap-iten-in-cart .products-cart .quantity .quantity-input .btn:hover, .wrap-pagination-info .page-numbers li .page-number-item:hover {
+  background: var(--bl2) !important;
+}
+.wrap-search .wrap-search-form button {
+  background-color:transparent;
+}
+.center-section .wrap-search-form button i {
+  color: #f2f2f2b3;
+}
+.center-section .wrap-search-form .wrap-list-cate .list-cate li.level-0 {
+  color:#f2f2f2;
+  background: var(--bl2);
+}
+.primary > .menu-item.home-icon {
+	background: transparent;
+}
+.product .product-thumnail, .product-style-2 .product-thumnail {
+  background: radial-gradient(ellipse at center, black, transparent);
+}
+.primary .menu-item.active a{
+  color: var(--rd1);
+}
+sup{
+    font-size: smaller;
+    vertical-align: super;
+}
+
+
+
+.row.wrap_produits {
+  background-color: #080808;
+  padding: 5px;
+  padding-top: 0;
+  margin: 0px;
+  margin-top:25px;
+}
+.product-list li{
+	padding: 10px;
+}
+.product-list li .product.product-style-3 {
+  padding: 0;
+  margin-top: 12px;
+}
+.product-list li .product.product-style-3:hover{
+    -webkit-box-shadow: -19px 16px 300px -57px rgba(255,0,0,1);
+    -moz-box-shadow: -19px 16px 300px -57px rgba(255,0,0,1);
+    box-shadow: 0px 0px 60px -50px rgb(255, 0, 0);
+}
+.product:hover .product-thumnail figure img {
+  transform:none;
+}
+.product.product-style-3 .product-info {
+  width: 100%;
+  padding-bottom: 5px;
+}
+.wrap-shop-control {
+  margin-top: 25px;
+  background-color: #080808;
+}
+.wrap-shop-control .shop-title {
+  font-size: 1.5rem;
+  padding: 0.7rem 2.4rem;
+  outline: none;
+  border: none;
+  color: #F2F2F2F2;
+  font-weight: 500;
+  border-radius: 7px 7px 7px 7px;
+  background-color: transparent;
+}
+.change-display-mode .display-mode {
+  color: #f2f2f2;
+}
+.change-display-mode .display-mode:hover, .change-display-mode .display-mode.active {
+  color: #f2f2f2;
+}
+.wrap-pagination-info .result-count {
+  color: #f2f2f2;
+}
+.wrap-pagination-info {
+  border: 0px;
+}
+.wrap-shop-control .wrap-right {
+  padding: 0.7rem 1rem;
+}
+.wrap-shop-control .chosen-container {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.wrap-shop-control .chosen-container .chosen-single {
+  background-color: transparent;
+}
+.wrap-shop-control .chosen-results li, .wrap-shop-control .chosen-single span {
+  color: #f2f2f2;
+}
+.chosen-container .chosen-drop {
+  background: black;
+}
+.chosen-container .chosen-results li.highlighted{
+background-color: var(--bl2);
+background-image: Linear-gradient (var(--bl2) 20%,var(--bl2) 90%);
+color:#f2f2f2;
+}
+.wrap-pagination-info .page-numbers li .page-number-item:not(.current) {
+  color: #f2f2f2;
+  background-color: #080808;
+  border: 0px;
+  border-radius: 7px;
+}
+.left-sidebar .main-content-area {
+  margin-top: -65px !important;
+}
+.wrap-breadcrumb ul a {
+  color: #f2f2f2;
+}
+.wrap-breadcrumb ul span {
+  color: #f2f2f2;
+}
+.wrap-breadcrumb ul li:not(:last-child)::after {
+color: #f2f2f2;
+}
+.wrap-main-slide .slide-carousel .slide-info.slide-2 {
+  top: 18%;
+}
+.product.product-style-3 .product-name span {
+  color: #f2f2f2;
+}
+.widget .widget-title {
+  color: #F2F2F2F2;
+}
+.widget ul li a {
+  color: #F2F2F2F2;
+}
+.has-child-cate:not(.open) .toggle-control::after {
+  background-color: #F2F2F2F2;
+}
+.has-child-cate .toggle-control::before {
+  background-color: #F2F2F2F2;
+}
+.wrap-product-detail{
+	min-height: 410px;
+}
+.wrap-product-detail .advance-info{
+	margin-top: 15px;
+}
+.wrap-product-detail .advance-info a.tab-control-item.active{
+	background: transparent;
+    background-color: transparent;
+	border-color: transparent;
+    color: var(--rd1);
+}
+.wrap-product-detail .tab-contents{
+	border:0px !important;
+}
+.wrap-product-detail .tab-contents .wrap-review-form span{
+  font-size: 0rem !important;
+}
+.widget .list-item a i{
+	margin-left:5px;
+}
+.widget.filter-widget .vertical-list li a:not(.btn-control)::before {
+  display: none;
+}
+.widget.filter-widget .vertical-list li a:not(.btn-control)::after {
+  display: none;
+}
+.widget .widget-title {
+  border-bottom: 1px solid #131313d1;
+}
+.widget{
+  margin-top:14px;
+}
+.widget.brand-widget{
+  margin-top:25px;
+}
+.has-child-cate .toggle-control:hover::after, .has-child-cate .toggle-control:hover::before{
+  background: var(--rd1) !important;
+}
+.product-widget-style .thumbnnail img {
+  border: 0px;
+}
+.product .product-info .product-name span{
+  color: #888888;
+}
+.product-widget-style .product-info {
+  padding-top: 6px;
+}
+
+
+#comments .commentlist li .comment_container img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+.wrap-main-slide .item-slide .img-slide {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.wrap-login-item .form-item .btn, .wrap-contacts .contact-box input[type="submit"]{
+  background-color: transparent;
+  border-radius: 7px;
+}
+
+
+.product .product-thumnail figure img {
+  height: 195px;
+  object-fit: cover;
+}
+.product.product-style-3 .product-info {
+  padding-left: 8px;
+}
+.product-list li .product.product-style-3.list{
+  display: flex !important;
+  height: auto !important;
+}
+.product-list li .product.product-style-3.list .product-info{
+  padding-left: 15px;
+}
+.product .product-thumnail.list{
+  height: 60px !important;
+  width: 60px !important;
+}
+.product .product-thumnail figure img.list{
+  height: 60px !important;
+  width: 60px !important;
+  object-fit: cover !important;
+}
+      .product-list .items {
+        display: none;
+      }
+      .product-list .items.active {
+        display: block;
+      }
+	  .wrap-pagination-info a.bloc{
+		pointer-events: none;
+	  }
+
+
+	  .wrap-main-slide .slide-carousel .slide-info.slide-2 {
+  top: 15%;
+}
+</style>
+<body class="home-page home-01">
+    
+	<!-- mobile menu -->
+    <div class="mercado-clone-wrap">
+        <div class="mercado-panels-actions-wrap">
+            <a class="mercado-close-btn mercado-close-panels" href="#">x</a>
+        </div>
+        <div class="mercado-panels"></div>
+    </div>
+	<!-- mobile menu -->
+
+	<!--header-->
+	<header id="header" class="header header-style-1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="topbar-menu-area">
+					<div class="container">
+						<div class="topbar-menu left-menu">
+							<ul>
+								<li class="menu-item" >
+									<a title="Hotline: (+123) 456 789" href="#" id="calendar_btn"><%= new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'}) %></a>
+								</li>
+							</ul>
+						</div>
+						<div class="topbar-menu right-menu">
+							<ul>
+								<li class="menu-item" ><a title="Register or Login" href="#" id="login_btn">Login</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="#" id="register_btn">Register</a></li>
+								<li class="menu-item lang-menu menu-item-has-children parent" style="z-index:10;">
+									<a title="English" href="#"><span class="img label-before"><img src="assets/images/lang-en.png" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<ul class="submenu lang" >
+										<li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="assets/images/lang-hun.png" alt="lang-hun"></span>Hungary</a></li>
+										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="assets/images/lang-ger.png" alt="lang-ger" ></span>German</a></li>
+										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="assets/images/lang-fra.png" alt="lang-fre"></span>French</a></li>
+										<li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="assets/images/lang-can.png" alt="lang-can"></span>Canada</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="mid-section main-info-area">
+						<div class="wrap-logo-top left-section">
+							<a href="index.html" class="link-to-home"><img src="assets/images/qtr.png" alt="mercado"></a>
+						</div>
+						<div class="wrap-search center-section">
+							<div class="wrap-search-form">
+								<form action="/search" method="get" id="form-search-top" name="form-search-top">
+									<input type="text" name="by" value="" placeholder="Search here...">
+									<button id="serach-button" form="form-search-top" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+									<div class="wrap-list-cate">
+										<a href="#" class="link-control">All Category</a>
+										<ul class="list-cate">
+											<li class="level-0">All Category</li>
+											<li class="level-1" value="Countries">- Countries</li>  <!--matchs aussi-->
+											<li class="level-2">Batteries & Chargens</li>
+											<li class="level-2">Headphone & Headsets</li>
+											<li class="level-2">Mp3 Player & Acessories</li>
+											<li class="level-1">- Players</li>
+											<li class="level-2">Batteries & Chargens</li>
+											<li class="level-2">Mp3 Player & Headphones</li>
+											<li class="level-2">Table & Accessories</li>
+											<li class="level-1">- World Cups</li>
+											<li class="level-2">Batteries & Chargens</li>
+											<li class="level-2">Headphone & Headsets</li>
+											<li class="level-2">Mp3 Player & Acessories</li>
+										</ul>
+										<input type="hidden" name="in" value="" id="product-cate">
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="wrap-icon right-section">
+							<div class="wrap-icon-section show-up-after-1024">
+								<a href="#" class="mobile-navigation">
+									<span></span>
+									<span></span>
+									<span></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nav-section header-sticky">
+					<div class="primary-nav-section">
+						<div class="container">
+							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
+								<li class="menu-item active">
+									<a href="/" class="link-term mercado-item-title">Home</i></a>
+								</li>
+								<li class="menu-item">
+									<a href="about-us.html" class="link-term mercado-item-title">Previews</a>
+								</li>
+								<li class="menu-item">
+									<a href="shop.html" class="link-term mercado-item-title">Statistics</a>
+								</li>
+								<li class="menu-item">
+									<a href="cart.html" class="link-term mercado-item-title">World Cups</a>
+								</li>
+								<li class="menu-item">
+									<a href="checkout.html" class="link-term mercado-item-title">News</a>
+								</li>
+								<li class="menu-item">
+									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+								</li>																	
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--header-->
+
+	<!--main area-->
+	<main id="main" class="main-site left-sidebar">
+
+		<div class="container">
+
+			<div class="wrap-breadcrumb">
+				<ul>
+					<li class="item-link"><a href="#" class="link">Squads</a></li>
+					<li class="item-link"><span>France</span></li>
+				</ul>
+			</div>
+			<div class="row">
+
+				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
+
+					<!--<div class="banner-shop">
+						<a href="#" class="banner-link">
+							<figure><img src="assets/images/1200-L-equipe-de-france-le-point-sur-le-groupe-des-bleus-pour-les-liminatoires-la-cdm-2022(2).jpg" alt="" style="width:100%;"></figure>
+						</a>
+					</div>-->
+			<!--slide-->
+			<div class="wrap-main-slide">
+				<div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
+				
+                    <%
+                    ORGANISATEURS.forEach(function(ORGANISATEUR){
+					if(ORGANISATEUR.ID_COUPE_MONDE==WORLDCUP.ID){
+                    %>
+                    <div class="item-slide"> 
+						<img src="assets/images/worldcup/<%=ORGANISATEUR.IMAGE%>" alt="" class="img-slide">
+						<div class="slide-info slide-2 col-xs-12 col-sm-12 col-md-12">
+							<h2 class="f-title">FIFA World Cup</h2>
+							<h4 class="s-title">Qatar 2022™</h4>
+							<p class="s-subtitle">First played in the Arab world</p>
+						</div>
+					</div>
+                    <%
+				    };
+                    });
+                    %>
+		
+				</div>
+			</div>
+			<!--slide-->
+            
+
+			        <div class="wrap-product-detail">
+				        <div class="advance-info">
+					        <div class="tab-control normal">
+					        	<a href="#description" class="tab-control-item active">World Cup <%=WORLDCUP.EDDITION%><sup>nd</sup> in <%=PAYS%></a>
+					        </div>
+					        <div class="tab-contents">
+						        <div class="tab-content-item active" id="description">
+									<p>The 2022 World Cup was the first global tournament where the gap between confederations was significantly closed. Both Asia and Africa stamped their brand onto the world stage. For the first time ever, the Asian Confederation saw three sides reach the Round of 16, producing major upsets throughout their campaigns. Saudi Arabia was our widest-priced underdog to win at any World Cup in Kindred's recorded history, 20/1 at one stage in PM, when they gave eventual tournament winners Argentina an early group-stage hiccup. We saw Japan top Group E, priced at 11/1 ahead of previous world champions Spain and Germany, as well as Australia, beating 10th world-ranked Denmark and Tunisia as priced outsiders PM in both respective games, to make the knockout stage. </p>
+							        <!--<p>The French national team is currently ranked 3rd in the FIFA World Rankings, behind Belgium and France. They have a strong squad with players like Kylian Mbappé, N'Golo Kanté, and Antoine Griezmann who are considered some of the best in the world in their positions. They are considered as one of the favorites to win the World Cup in Qatar 2022.</p>-->
+									
+										<div class="wrap-review-form">
+											
+											<div id="comments">
+												<%
+                                                ORGANISATEURS.forEach(function(ORGANISATEUR){
+												if(ORGANISATEUR.ID_COUPE_MONDE==WORLDCUP.ID){
+                                                %>
+												<ol class="commentlist">
+													<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
+														<div id="comment-20" class="comment_container"> 
+															<img alt="" src="assets/country-flags/png-1024/<%=ORGANISATEUR.pays.DRAPAU%>" height="80" width="80">
+															<div class="comment-text">
+																<!--
+																<div class="star-rating">
+																	<span class="width-80-percent">Rated <strong class="rating">5</strong> out of 5</span>
+																</div>
+																-->
+																<p class="meta"> 
+																	<strong class="woocommerce-review__author"><%=ORGANISATEUR.pays.NOM%></strong> 
+																	<span class="woocommerce-review__dash">–</span>
+																	<time class="woocommerce-review__published-date" datetime="2008-02-14 20:00" >Begin in 20-12-2022</time>
+																</p>
+																<div class="description">
+																	<p><%=ORGANISATEUR.pays.NOM%>, who has been in charge for 10 years, has led Les Bleus to three major finals and won the 2018 World Cup. France lost a thrilling World Cup final to Argentina last Sunday in Qatar.</p>
+																</div>
+															</div>
+														</div>
+													</li>
+												</ol>
+												<%
+											    };
+                                                });
+                                                %>
+											</div><!-- #comments -->
+	
+										</div>
+									<p>In the group stage of the tournament, the French national team was placed in Group F. Based on their current FIFA ranking and squad, they emerged as winners of the group stage. With a strong team and talented players, they successfully advanced to the round of sixteen, as well as the semi-finals and finals of the tournament.</p>
+								    <p></p>
+									<a>
+									<%if(WORLDCUP.ID==1){%>
+									<img src="assets/FIFA-World-Cup-Qatar-2022-Final-groups.jpg" alt="" class="img-slide">
+									<%};%>
+								    </a>
+								</div>
+					        </div>
+				        </div>
+		        	</div>
+					
+				</div>
+
+				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
+					<div class="widget mercado-widget categories-widget">
+                        
+						<a href="/worldcup?id=<%= WORLDCUP.ID%>" class="widget-title">World Cup <%= WORLDCUP.EDDITION%><sup>nd</sup> in <%= PAYS%></a>
+						<div class="widget-content">
+							<ul class="list-category">
+                                <li class="category-item">
+									<a href="#" class="cate-link">Squads</a>
+								</li>
+								<li class="category-item has-child-cate">
+									<a href="#" class="cate-link">Groups</a>
+									<span class="toggle-control">+</span>
+									<ul class="sub-cate">
+										<li class="category-item"><a href="#" class="cate-link">Batteries (22)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Headsets (16)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Screen (28)</a></li>
+									</ul>
+								</li>
+								<li class="category-item has-child-cate">
+									<a href="#" class="cate-link">Rounds</a>
+									<span class="toggle-control">+</span>
+									<ul class="sub-cate">
+										<li class="category-item"><a href="#" class="cate-link">Batteries (22)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Headsets (16)</a></li>
+										<li class="category-item"><a href="#" class="cate-link">Screen (28)</a></li>
+									</ul>
+								</li>
+								<li class="category-item">
+									<a href="#" class="cate-link">Statistics</a>
+								</li>
+								<li class="category-item">
+									<a href="#" class="cate-link">Awards</a>
+								</li>
+								<li class="category-item">
+									<a href="#" class="cate-link">Sponsorship</a>
+								</li>
+								<li class="category-item">
+									<a href="#" class="cate-link">Music</a>
+								</li>
+							</ul>
+						</div>
+					</div><!-- Categories widget-->
+
+					
+
+					<div class="widget mercado-widget widget-product">
+						<h2 class="widget-title">Popular Products</h2>
+						<div class="widget-content">
+							<ul class="products">
+								<li class="product-item">
+									<div class="product product-widget-style">
+										<div class="thumbnnail">
+											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+												<figure><img src="assets/images/country-flags/png-1024/american-32917.png" alt=""></figure>
+											</a>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>In the group stage of the tournament, the French national team was placed in Group F.</span></a>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-item">
+									<div class="product product-widget-style">
+										<div class="thumbnnail">
+											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+												<figure><img src="assets/images/country-flags/png-1024/argentina-32919.png" alt=""></figure>
+											</a>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>In the group stage of the tournament, the French national team was placed in Group F.</span></a>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-item">
+									<div class="product product-widget-style">
+										<div class="thumbnnail">
+											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+												<figure><img src="assets/images/country-flags/png-1024/morocco-33027.png" alt=""></figure>
+											</a>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>In the group stage of the tournament, the French national team was placed in Group F.</span></a>
+										</div>
+									</div>
+								</li>
+
+								<li class="product-item">
+									<div class="product product-widget-style">
+										<div class="thumbnnail">
+											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+												<figure><img src="assets/images/country-flags/png-1024/greenland-33003.png" alt=""></figure>
+											</a>
+										</div>
+										<div class="product-info">
+											<a href="#" class="product-name"><span>In the group stage of the tournament, the French national team was placed in Group F.</span></a>
+										</div>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+					</div><!-- brand widget-->
+
+					
+					<div class="widget mercado-widget filter-widget brand-widget">
+						<h2 class="widget-title">World Cups</h2>
+						<div class="widget-content">
+							<ul class="list-style vertical-list list-limited" data-show="2">
+								<%
+					            WORLDCUPS.forEach(function(WC){
+									let PAYS = null;
+									let ID_PAYS = null;
+									var i=0;
+									ORGANISATEURS.forEach(function(ORGANISATEUR){
+									if(ORGANISATEUR.ID_COUPE_MONDE==WC.ID){
+									if(i==0){
+										 PAYS=ORGANISATEUR.pays.NOM;
+									}
+									else{
+										PAYS+=' , '+ORGANISATEUR.pays.NOM;
+									};
+									i++;
+									};
+									});
+				                %>
+								<li class="list-item <%= (WC.ID != WORLDCUP.ID) ? 'default-hiden' : '' %>"><a class="filter-link <%= (WC.ID == WORLDCUP.ID) ? 'active' : '' %>" href="/worldcup?wc=<%= WC.ID%>">World Cup <%= WC.EDDITION%><sup>nd</sup> in <%=PAYS%></a></li>
+								<%
+								});
+				                %>
+								<li class="list-item"><a data-label='Show less<i class="fa fa-angle-up" aria-hidden="true"></i>' class="btn-control control-show-more" href="#">Show more<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div><!-- brand widget-->
+
+				</div><!--end sitebar-->
+
+			</div><!--end row-->
+
+		</div><!--end container-->
+
+	</main>
+	<!--main area-->
+
+	<!--back_to_top-->
+	<div class="back_to_top">
+		<ion-icon name="chevron-up-outline"></ion-icon>
+	</div>
+	<!--back_to_top-->
+	
+	<!--login popup-->
+	<div class="modal-container login">
+      <div class="modal-inner" style="height:410px;width:600px;">
+        <div class="btn-close">
+		<span class="material-symbols-outlined">close</span>
+        </div>
+						<div class="wrap-login-item " style="border:none;">						
+							<div class="login-form form-item form-stl" style="border:none;">
+								<form name="frm-login">
+									<fieldset class="wrap-title">
+										<h3 class="form-title">Log in to your account</h3>										
+									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-login-uname">Email Address</label>
+										<input type="text" id="frm-login-uname" name="email">
+									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-login-pass">Password</label>
+										<input type="password" id="frm-login-pass" name="pass">
+									</fieldset>
+									
+									<fieldset class="wrap-input">
+										<label class="remember-field">
+											<input class="frm-input " name="rememberme" id="rememberme" value="forever" type="checkbox"><span>Remember me</span>
+										</label>
+										<a class="link-function left-position" href="#" title="Forgotten password?">Forgotten password?</a>
+									</fieldset>
+									<input type="submit" class="btn btn-submit" value="Login" name="submit">
+								</form>
+							</div>												
+						</div>
+      </div>
+      </div>
+    </div>
+	<!--login popup-->
+
+	<!--register popup-->
+	<div class="modal-container register">
+      <div class="modal-inner" style="height:585px;width:600px;">
+        <div class="btn-close" style="z-index:99;">
+		<span class="material-symbols-outlined">close</span>
+        </div>
+						
+						<div class="wrap-login-item " style="border:none;">
+							<div class="register-form form-item " style="border:none;">
+								<form class="form-stl" action="#" name="frm-login" method="get" style="border:none;">
+									<fieldset class="wrap-title" style="border:none;">
+										<h3 class="form-title">Create an account</h3>
+										<h4 class="form-subtitle">Personal infomation</h4>
+									</fieldset>									
+									<fieldset class="wrap-input" style="border:none;">
+										<label for="frm-reg-lname">Name*</label>
+										<input type="text" id="frm-reg-lname" name="reg-lname">
+									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-reg-email">Email Address*</label>
+										<input type="email" id="frm-reg-email" name="reg-email">
+									</fieldset>
+									<fieldset class="wrap-functions ">
+										<label class="remember-field">
+											<input name="newletter" id="new-letter" value="forever" type="checkbox"><span>Sign Up for Newsletter</span>
+										</label>
+									</fieldset>
+									<fieldset class="wrap-title">
+										<h3 class="form-title">Login Information</h3>
+									</fieldset>
+									<fieldset class="wrap-input item-width-in-half left-item ">
+										<label for="frm-reg-pass">Password *</label>
+										<input type="text" id="frm-reg-pass" name="reg-pass">
+									</fieldset>
+									<fieldset class="wrap-input item-width-in-half ">
+										<label for="frm-reg-cfpass">Confirm Password *</label>
+										<input type="text" id="frm-reg-cfpass" name="reg-cfpass">
+									</fieldset>
+									<input type="submit" class="btn btn-sign" value="Register" name="register">
+								</form>
+							</div>											
+						</div>
+      </div>
+      </div>
+    </div>
+	<!--register popup-->
+
+	<!--calendar popup-->
+	<div class="modal-container calendar">
+      <div class="modal-inner" style="height:620px;width:1200px;padding:0;scale:0.95;">
+        <div class="btn-close" style="z-index:999;">
+		<span class="material-symbols-outlined">close</span>
+        </div>
+		<div class="wrapper">
+        <div class="calendar-area">
+            <div class="cal-nav">
+                <button class="back">
+                    <ion-icon name="arrow-back"></ion-icon>
+                </button>9
+                <div class="months-nav">
+                    <span class="prev">
+                        <ion-icon name="chevron-back"></ion-icon>
+                    </span>
+                    <span class="month">september</span>
+                    <span class="next">
+                        <ion-icon name="chevron-forward"></ion-icon>
+                    </span>
+                </div>
+            </div>
+            <div class="cal-table">
+                <table>
+                    <tr>
+                        <th>sun</th>
+                        <th>mon</th>
+                        <th>tue</th>
+                        <th>wed</th>
+                        <th>thu</th>
+                        <th>fri</th>
+                        <th>sat</th>
+                    </tr>
+                    <tr>
+                        <td class="disabled">30</td>
+                        <td class="disabled">31</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td class="reminder">8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td class="range"><span>21</span></td>
+                        <td class="range-dates">22</td>
+                        <td class="range-dates">23</td>
+                        <td class="range-dates">24</td>
+                        <td class="range"><span>25</span></td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td class="disabled">1</td>
+                        <td class="disabled">2</td>
+                    </tr>
+                    <tr>
+                        <td class="disabled">3</td>
+                        <td class="disabled">4</td>
+                        <td class="disabled">5</td>
+                        <td class="disabled">6</td>
+                        <td class="disabled">7</td>
+                        <td class="disabled">8</td>
+                        <td class="disabled">9</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="ticket-area">
+            <div class="destination">
+                <div class="place">
+                    <span class="city"><img src="./png-48/qatar-48x48-33060.png" /></span>
+                    <span class="country">france</span>
+                </div>
+
+                <div  style="padding-top:10px;">
+				<span style="font-family: 'Audiowide', sans-serif;font-size:18px;">Vs<spam>
+                </div>
+
+
+                <div class="place">
+                    <span class="city"><img src="./png-48/qatar-48x48-33060.png" /></span>
+                    <span class="country">england</span>
+                </div>
+            </div>
+
+            <div class="ticket-allocation">
+                <div class="price-detail">
+                    <span class="price">$300</span>
+                    <span class="seats-alloted">2 Seats</span>
+                </div>
+                <div class="edit" style="background-color:transparent;">
+				<img src="./assets/images/paypal.svg" />
+                </div>
+                <div class="flight-date">
+                    <span class="f-date">2 Goals</span>
+                    <ion-icon name="arrow-forward"></ion-icon>
+                    <span class="f-date">1 Goal</span>
+                </div>
+            </div>
+
+            <div class="exit-area">
+                <div class="order-window">
+                    <p class="desc">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <span>Remaining you should have more than 18 years old</span>
+                    </p>
+                </div>
+                <button class="confirm">Gambling Now</button>
+            </div>
+        </div>
+    </div>				
+      </div>
+      </div>
+    </div>
+	<!--calendar popup-->
+	
+	<!--footer-->
+	<footer id="footer">
+		<style>footer .item-header{color: #a19f9f !important;}</style>
+		<div class="wrap-footer-content footer-style-1">
+			<div class="coppy-right-box">
+				<div class="container">
+					<div class="coppy-right-item item-left">
+						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+					</div>
+					<div class="coppy-right-item item-right">
+						<div class="wrap-nav horizontal-nav">
+							<ul>
+								<li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>								
+								<li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a></li>
+								<li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms & Conditions</a></li>
+								<li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a></li>								
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+    <!--footer-->
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4"></script>
+<script src="assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.flexslider.js"></script>
+<script src="assets/js/chosen.jquery.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.countdown.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="assets/js/functions.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/search.js"></script>
+</html>

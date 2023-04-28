@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Home</title>	<!--Scorify-->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/chosen.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/color.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/costum.css">
+	<link rel="stylesheet" href="assets/css/cup.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+<style>
+  .wrap-show-advance-info-box.style-1 .product.live .match-header {
+    margin-top: 0px;
+  }
+  .wrap-show-advance-info-box.style-1 .product.live {
+    padding-top: 0px;
+  }
+  .wrap-show-advance-info-box.wrap-scores .product.product-style-2 {
+    margin-top: 10px;
+  }
+  .wrap-product-tab.tab-style-1 {
+    margin-top: 0px;
+  }
+  .wrap-show-advance-info-box.style-1 .product.live .match-header {
+    margin-bottom: 10px;
+  }
+  .wrap-show-advance-info-box.wrap-scores .product-thumnail {
+    margin-bottom: 10px;
+  }
+  .wrap-show-advance-info-box .title-box {
+    color: #f2f2f2f2;
+  }
+  .team-logo {
+    background-color: transparent;
+  }
+  .wrap-show-advance-info-box .match-referee strong {
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: initial;
+  letter-spacing: 0.18rem;
+  color: #F2F2F2F2;
+}
+
+
+.wrap-show-advance-info-box .match-referee strong {
+  font-size: 11.5px;
+  font-weight: inherit;
+  text-transform: initial;
+  letter-spacing: .2rem;
+}
+.wrap-login-item .form-item .btn{
+  border-radius: 7px;
+}
+.wrap-login-item .form-item .btn:hover {
+  color: #f2f2f2f2;
+  border: 0px;
+}
+
+
+.topbar-menu-area .topbar-menu .submenu.user {
+  min-width: 110px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+.topbar-menu-area .topbar-menu .submenu.user li {
+	padding: 5px 0px 7.5px 30px;
+}
+
+
+.wrap-login-item .form-item input[type="text"], .wrap-login-item .form-item input[type="password"], .wrap-login-item .form-item input[type="email"] {
+    background: #0d0d0d;
+	background-color: #0d0d0d;
+	border-radius: 7px;
+}
+
+.link-to-home img{
+	max-width: 150px;
+}
+
+.header .main-info-area .right-section {
+    margin-bottom: 0px;
+}
+</style>
+<body class="home-page home-01">
+    
+	<!-- mobile menu -->
+    <div class="mercado-clone-wrap">
+        <div class="mercado-panels-actions-wrap">
+            <a class="mercado-close-btn mercado-close-panels" href="#">x</a>
+        </div>
+        <div class="mercado-panels"></div>
+    </div>
+	<!-- mobile menu -->
+
+	<!--header-->
+	<header id="header" class="header header-style-1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="topbar-menu-area">
+					<div class="container">
+						<div class="topbar-menu left-menu">
+							<ul>
+								<li class="menu-item" >
+									<a title="Hotline: (+123) 456 789" href="#" id="calendar_btn"><%= new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'}) %></a>
+								</li>
+							</ul>
+						</div>
+						<div class="topbar-menu right-menu">
+							<ul>
+								<% if(session.user){ %>
+								<li class="menu-item lang-menu menu-item-has-children parent" style="z-index:10;">
+									<a title="user" href="#"><span class="img label-before"></span><%= session.user.username %></a>
+									<ul class="submenu user" >
+										<li class="menu-item" ><a title="logout" href="/logout"><span class="img label-before"></span>Logout</a></li>
+									</ul>
+								</li>
+								<% }else{ %>
+								<li class="menu-item" ><a title="Register or Login" href="#" id="login_btn">Login</a></li>
+								<li class="menu-item" ><a title="Register or Login" href="#" id="register_btn">Register</a></li>
+								<% }; %>
+								<li class="menu-item lang-menu menu-item-has-children parent" style="z-index:10;">
+									<a title="English" href="#"><span class="img label-before"><img src="assets/images/lang-en.png" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<ul class="submenu lang" >
+										<li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="assets/images/lang-hun.png" alt="lang-hun"></span>Hungary</a></li>
+										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="assets/images/lang-ger.png" alt="lang-ger" ></span>German</a></li>
+										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="assets/images/lang-fra.png" alt="lang-fre"></span>French</a></li>
+										<li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="assets/images/lang-can.png" alt="lang-can"></span>Canada</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="mid-section main-info-area">
+						<div class="wrap-logo-top left-section">
+							<a href="index.html" class="link-to-home"><img src="assets/images/qtr.png" alt="mercado"></a>
+						</div>
+						<div class="wrap-search center-section">
+							<div class="wrap-search-form">
+								<form action="/search" method="get" id="form-search-top" name="form-search-top">
+									<input type="text" name="by" value="" placeholder="Search here...">
+									<button id="serach-button" form="form-search-top" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+									<div class="wrap-list-cate">
+										<a href="#" class="link-control">All Category</a>
+										<ul class="list-cate">
+											<li class="level-0">All Category</li>
+											<li class="level-1" value="Countries">- Countries</li>  <!--matchs aussi-->
+											<!--<li class="level-2">Morocco</li>
+											<li class="level-2">France</li>-->
+											<li class="level-1">- Players</li>
+											<!--<li class="level-2">Kellen Mbappe</li>
+											<li class="level-2">Lionel Messi</li>-->
+										</ul>
+										<!--<input type="hidden" name="in" value="" id="product-cate">-->
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="wrap-icon right-section">
+							<div class="wrap-icon-section show-up-after-1024">
+								<a href="#" class="mobile-navigation">
+									<span></span>
+									<span></span>
+									<span></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nav-section header-sticky">
+					<div class="primary-nav-section">
+						<div class="container">
+							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
+								<li class="menu-item active">
+									<a href="/" class="link-term mercado-item-title">Home</i></a>
+								</li>
+								<li class="menu-item">
+									<a href="about-us.html" class="link-term mercado-item-title">Previews</a>
+								</li>
+								<li class="menu-item">
+									<a href="shop.html" class="link-term mercado-item-title">Statistics</a>
+								</li>
+								<li class="menu-item">
+									<a href="cart.html" class="link-term mercado-item-title">World Cups</a>
+								</li>
+								<li class="menu-item">
+									<a href="checkout.html" class="link-term mercado-item-title">News</a>
+								</li>
+								<li class="menu-item">
+									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+								</li>																	
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--header-->
+
+	<!--main-->
+	<main id="main">
+		<div class="container">
+
+			<!--slide-->
+			<div class="wrap-main-slide">
+				<div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
+					<div class="item-slide"> 
+						<img src="assets/images/wallpaperflare.com_wallpaper(8).jpg" alt="" class="img-slide">
+						<div class="slide-info slide-2 col-xs-12 col-sm-12 col-md-12">
+							<h2 class="f-title">FIFA World Cup</h2>
+							<h4 class="s-title">Qatar 2022™</h4>
+							<p class="s-subtitle">First played in the Arab world</p>
+						</div>
+					</div>
+					<div class="item-slide">
+						<img src="assets/images/wallpaperflare.com_wallpaper(8).jpg" alt="" class="img-slide">
+						<div class="slide-info slide-3 col-xs-12 col-sm-12 col-md-12">
+							<h2 class="f-title">The FIFA World Cup <b>Qatar 2022™</b></h2>
+							<p class="sale-info">It will be the 22nd edition of the competition, 32 teams will participate</p>
+							<a href="#" class="btn-link">Show teams</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--slide-->
+
+			<!--lives wrap-->
+			<div class="wrap-show-advance-info-box style-1 has-countdown">
+				<h3 class="title-box">Football Live Scores </h3>
+				<div class="wrap-products style-nav-1 wrap-content" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+					<% MATCHS.forEach(function(MATCH){
+						var matchDate = new Date(MATCH.DATE_MATCH);
+	                    var months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+	                    var matchDateString = (matchDate.getDate() + '-' + months[matchDate.getMonth()] + '-' + matchDate.getFullYear());
+	                    if(matchDateString == '23-NOV-2022'){
+							const timeString = "12:00";
+							const currentTime = new Date();
+							const [hours1, minutes1] = MATCH.HORAIRE_MATCH.split(":");
+							const horaire = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), hours1, minutes1);
+
+							const [hours, minutes] = timeString.split(":");
+							const targetTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), hours, minutes);
+							
+							if (horaire < targetTime) {
+							 
+							 
+							
+						let OPPOSE1 = null;
+						let OPPOSE2 = null;
+						var MAIN_ARBITRE;
+						OPPOSES.forEach(function(OPPOSE){
+							if(OPPOSE.ID_MATCH == MATCH.ID){
+								if(!OPPOSE1) OPPOSE1 = OPPOSE;
+								else OPPOSE2 = OPPOSE;
+							}
+						});
+						if((OPPOSE1)&&(OPPOSE2)){
+					 %>
+					<div class="product product-style-2 equal-elem live col-xs-12 col-sm-12 col-md-12">
+					<div class="product-thumnail">
+					<div class="match">
+						<div class="match-header"><!--<i class="fa fa-circle" aria-hidden="true"></i>-->
+							<div class="match-status">Live</div>
+						</div>
+						<div class="match-content" style="margin: 0;">
+								<div class="column">
+									<div class="team team--home">
+										<h2 class="team-name">France</h2>
+										<div class="team-logo">
+											<img src="./png-48/france-48x48-32967.png" />
+										</div>
+										
+									</div>
+								</div>
+								<div class="column">
+									<div class="match-details">
+										
+										<div class="match-score">
+											<span class="match-score-number match-score-number--leading">3</span>
+											<span class="match-score-divider">:</span>
+											<span class="match-score-number">1</span>
+										</div>
+										<div class="match-time-lapsed">
+											72'
+										</div>
+										<div class="match-referee lbl">
+											Referee
+										</div>
+										<div class="match-referee">
+											<strong>Mike dean</strong>
+										</div>
+										
+									</div>
+								</div>
+								<div class="column">
+									<div class="team team--away">
+										<h2 class="team-name">Qatar</h2>
+										<div class="team-logo">
+											<img src="./png-48/qatar-48x48-33060.png" />
+										</div>
+									</div>
+								</div>
+							</div>
+					  </div>
+					</div>
+					</div>
+					<%}}}}); %>
+				</div>
+			</div>
+			<!--lives wrap-->
+ 
+			<!--players wrap-->
+			<div class="wrap-show-advance-info-box style-1 rslt">
+				<h3 class="title-box">Matchs of Day</h3>
+				<div class="wrap-products wrap-content">
+					<div class="wrap-product-tab tab-style-1">						
+						<div class="tab-contents wrap-content">
+							<div class="tab-content-item active" id="digital_1a">
+								<div class="wrap-products slide-carousel">
+									<% MATCHS.forEach(function(MATCH){
+										var matchDate = new Date(MATCH.DATE_MATCH);
+	                                    var months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+	                                    var matchDateString = (matchDate.getDate() + '-' + months[matchDate.getMonth()] + '-' + matchDate.getFullYear());
+	                                    if(matchDateString == '23-NOV-2022'){
+										let OPPOSE1 = null;
+										let OPPOSE2 = null;
+										var MAIN_ARBITRE;
+										OPPOSES.forEach(function(OPPOSE){
+											if(OPPOSE.ID_MATCH == MATCH.ID){
+												if(!OPPOSE1) OPPOSE1 = OPPOSE;
+												else OPPOSE2 = OPPOSE;
+											}
+										});
+										ARBITRER.forEach(function(ARB){
+											if(ARB.ID_MATCH == MATCH.ID){
+												if(ARB.arbitre.type_arbitre.ID==1){
+													MAIN_ARBITRE=ARB.arbitre;
+												}
+											}
+										});
+
+										if((OPPOSE1)&&(OPPOSE2)){
+									 %>        
+									    <a href="/match?id=<%= MATCH.ID%>" class="product product-style-2 equal-elem col-xs-12 col-sm-12 col-md-12">
+										<div class="product-thumnail">
+										<div class="match">
+						                <div class="match-content">
+						        		<div class="column">
+							    		<div class="team team--home">
+										<h2 class="team-name"><%= OPPOSE1.pays.NOM%></h2>
+										<div class="team-logo">
+											<img src="./assets/country-flags/png-1024/<%= OPPOSE1.pays.DRAPAU%>" />
+										</div>
+									    </div>
+								        </div>
+								        <div class="column">
+								    	<div class="match-details">
+								     	<div class="match-date">
+						                    <%= matchDateString%> <strong><%= MATCH.HORAIRE_MATCH%></strong>
+					                    </div>
+										<div class="match-score">
+											<span class="match-score-number match-score-number--leading"><%= OPPOSE1.RESULTAT%></span>
+											<span class="match-score-divider">:</span>
+											<span class="match-score-number"><%= OPPOSE2.RESULTAT%></span>
+										</div>
+										<div class="match-referee lbl">
+											Stadium
+										</div>
+										<div class="match-referee">
+											<strong><%= MATCH.stade.NOM%></strong>
+										</div>
+									    </div>
+								        </div>
+								        <div class="column">
+									    <div class="team team--away">
+										<h2 class="team-name"><%= OPPOSE2.pays.NOM%></h2>
+										<div class="team-logo">
+											<img src="./assets/country-flags/png-1024/<%= OPPOSE2.pays.DRAPAU%>"/>
+										</div>
+									    </div>
+								        </div>
+							            </div>
+					                    </div>
+										</div>
+									</a>
+									<% }}}); %>
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>		
+			<!--players wrap-->	
+
+			<!--scores wrap-->
+			<!--<div class="wrap-show-advance-info-box style-1 wrap-scores">
+				<h3 class="title-box">Product Categories</h3>	
+				      <div class="wrap-products wrap-content">
+                      <div class="product product-style-2 col-xs-12 col-sm-12 col-md-12">	
+                      <div class="product-thumnail">
+                      <div class="table-responsive">
+                         <table class="custom-table">
+                             <thead>
+                                <tr>
+                                <th scope="col">Pays</th>
+                                <th scope="col">G</th>
+                                <th scope="col">W</th>
+                                <th scope="col">D</th>
+                                <th scope="col">L</th>
+                                <th scope="col">S</th>
+                                <th scope="col">M</th>
+                                <th scope="col">P</th>
+								<th scope="col"></th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr scope="row">	  
+                                <td><img src="./png-48/france-48x48-32967.png" /> <a href="#">France</a></td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+								<td><a href="#" class="more">Details</a></td>
+                                </tr>
+                                <tr>	  
+                                <td><img src="./png-48/qatar-48x48-33060.png" /> <a href="#">Qatar</a></td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+								<td><a href="#" class="more">Details</a></td>
+                                </tr>
+					            <tr>	  
+                                <td><img src="./png-48/france-48x48-32967.png" /> <a href="#">France</a></td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+								<td><a href="#" class="more">Details</a></td>
+                                </tr>
+                                <tr>	  
+                                <td><img src="./png-48/qatar-48x48-33060.png" /> <a href="#">Qatar</a></td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+								<td><a href="#" class="more">Details</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                      </div>
+                      </div>
+                      <div class="product-info">
+                        <a href="#" class="product-name"><span>France V Denmark | Group H, FIFA World Cup qualification, 2022.</span></a>
+                      </div>
+                      </div>
+					  </div>
+			</div>-->
+			<!--scores wrap-->
+
+			<!--players wrap-->
+			<div class="wrap-show-advance-info-box style-2 play">
+				<h3 class="title-box">Top Player Statistics</h3>
+				<div class="wrap-products wrap-content">
+					<div class="wrap-product-tab tab-style-1">						
+						<div class="tab-contents wrap-content">
+							<div class="tab-content-item active" id="digital_1a">
+								<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
+									<% TOP.forEach(function(j){%>
+									<div class="product product-style-2 equal-elem ">
+										<div class="product-thumnail">
+											<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
+												<figure><img src="assets/images/players/<%=(j.IMAGE) ? j.IMAGE : 'Inconnu.png'%>" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+											</a>
+										</div>
+										<div class="product-info">
+											<a href="/player?id=<%= j.ID%>" class="product-name"><span><%= j.NOM%></span></a>
+											<div class="wrap-price">
+												<del>
+													<p class="product-price"><%= j.pays.NOM%> professional footballer who plays as a forward for the<a href="/country?id=<%= j.pays.ID%>" class="info"> <%= j.pays.NOM%> national team</a> .</p>
+												</del>
+											</div>
+										</div>
+									</div>
+                                    <% })%>
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>		
+			<!--players wrap-->			
+
+		</div>
+	</main>
+	<!--main-->
+
+	<!--back_to_top-->
+	<div class="back_to_top">
+		<ion-icon name="chevron-up-outline"></ion-icon>
+	</div>
+	<!--back_to_top-->
+	
+	<!--login popup-->
+	<div class="modal-container login">
+      <div class="modal-inner" style="height:410px;width:600px;">
+        <div class="btn-close">
+		<span class="material-symbols-outlined">close</span>
+        </div>
+						<div class="wrap-login-item " style="border:none;">						
+							<div class="login-form form-item form-stl" style="border:none;">
+								<form name="frm-login" method="post" action="/auth/signin" id="login-form">
+									<fieldset class="wrap-title">
+										<h3 class="form-title">Log in to your account</h3>										
+									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-login-uname">Email Address</label>
+										<input type="text" id="frm-login-uname" name="username">
+									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-login-pass">Password</label>
+										<input type="password" id="frm-login-pass" name="password">
+									</fieldset>
+									
+									<fieldset class="wrap-input">
+										<label class="remember-field">
+											<input class="frm-input " name="rememberme" id="rememberme" value="forever" type="checkbox"><span>Remember me</span>
+										</label>
+										<a class="link-function left-position" href="#" title="Forgotten password?">Forgotten password?</a>
+									</fieldset>
+									<input type="submit" class="btn btn-submit" value="Login" name="submit">
+								</form>
+							</div>												
+						</div>
+      </div>
+      </div>
+    </div>
+	<!--login popup-->
+
+	<!--register popup-->
+	<div class="modal-container register">
+      <div class="modal-inner" style="height:585px;width:600px;">
+        <div class="btn-close" style="z-index:99;">
+		<span class="material-symbols-outlined">close</span>
+        </div>
+						
+						<div class="wrap-login-item " style="border:none;">
+							<div class="register-form form-item " style="border:none;">
+								<form class="form-stl" action="#" name="frm-login" method="get" style="border:none;">
+									<fieldset class="wrap-title" style="border:none;">
+										<h3 class="form-title">Create an account</h3>
+										<h4 class="form-subtitle">Personal infomation</h4>
+									</fieldset>									
+									<fieldset class="wrap-input" style="border:none;">
+										<label for="frm-reg-lname">Name*</label>
+										<input type="text" id="frm-reg-lname" name="reg-lname">
+									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-reg-email">Email Address*</label>
+										<input type="email" id="frm-reg-email" name="reg-email">
+									</fieldset>
+									<fieldset class="wrap-functions ">
+										<label class="remember-field">
+											<input name="newletter" id="new-letter" value="forever" type="checkbox"><span>Sign Up for Newsletter</span>
+										</label>
+									</fieldset>
+									<fieldset class="wrap-title">
+										<h3 class="form-title">Login Information</h3>
+									</fieldset>
+									<fieldset class="wrap-input item-width-in-half left-item ">
+										<label for="frm-reg-pass">Password *</label>
+										<input type="text" id="frm-reg-pass" name="reg-pass">
+									</fieldset>
+									<fieldset class="wrap-input item-width-in-half ">
+										<label for="frm-reg-cfpass">Confirm Password *</label>
+										<input type="text" id="frm-reg-cfpass" name="reg-cfpass">
+									</fieldset>
+									<input type="submit" class="btn btn-sign" value="Register" name="register">
+								</form>
+							</div>											
+						</div>
+      </div>
+      </div>
+    </div>
+	<!--register popup-->
+
+	<!--calendar popup-->
+	<div class="modal-container calendar">
+      <div class="modal-inner" style="height:620px;width:1200px;padding:0;scale:0.95;">
+        <div class="btn-close" style="z-index:999;">
+		<span class="material-symbols-outlined">close</span>
+        </div>
+		<div class="wrapper">
+        <div class="calendar-area">
+            <div class="cal-nav">
+                <button class="back">
+                    <ion-icon name="arrow-back"></ion-icon>
+                </button>9
+                <div class="months-nav">
+                    <span class="prev">
+                        <ion-icon name="chevron-back"></ion-icon>
+                    </span>
+                    <span class="month">september</span>
+                    <span class="next">
+                        <ion-icon name="chevron-forward"></ion-icon>
+                    </span>
+                </div>
+            </div>
+            <div class="cal-table">
+                <table>
+                    <tr>
+                        <th>sun</th>
+                        <th>mon</th>
+                        <th>tue</th>
+                        <th>wed</th>
+                        <th>thu</th>
+                        <th>fri</th>
+                        <th>sat</th>
+                    </tr>
+                    <tr>
+                        <td class="disabled">30</td>
+                        <td class="disabled">31</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td class="reminder">8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td class="range"><span>21</span></td>
+                        <td class="range-dates">22</td>
+                        <td class="range-dates">23</td>
+                        <td class="range-dates">24</td>
+                        <td class="range"><span>25</span></td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td class="disabled">1</td>
+                        <td class="disabled">2</td>
+                    </tr>
+                    <tr>
+                        <td class="disabled">3</td>
+                        <td class="disabled">4</td>
+                        <td class="disabled">5</td>
+                        <td class="disabled">6</td>
+                        <td class="disabled">7</td>
+                        <td class="disabled">8</td>
+                        <td class="disabled">9</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="ticket-area">
+            <div class="destination">
+                <div class="place">
+                    <span class="city"><img src="./png-48/qatar-48x48-33060.png" /></span>
+                    <span class="country">france</span>
+                </div>
+
+                <div  style="padding-top:10px;">
+				<span style="font-family: 'Audiowide', sans-serif;font-size:18px;">Vs<spam>
+                </div>
+
+
+                <div class="place">
+                    <span class="city"><img src="./png-48/qatar-48x48-33060.png" /></span>
+                    <span class="country">england</span>
+                </div>
+            </div>
+
+            <div class="ticket-allocation">
+                <div class="price-detail">
+                    <span class="price">$300</span>
+                    <span class="seats-alloted">2 Seats</span>
+                </div>
+                <div class="edit" style="background-color:transparent;">
+				<img src="./assets/images/paypal.svg" />
+                </div>
+                <div class="flight-date">
+                    <span class="f-date">2 Goals</span>
+                    <ion-icon name="arrow-forward"></ion-icon>
+                    <span class="f-date">1 Goal</span>
+                </div>
+            </div>
+
+            <div class="exit-area">
+                <div class="order-window">
+                    <p class="desc">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <span>Remaining you should have more than 18 years old</span>
+                    </p>
+                </div>
+                <button class="confirm">Gambling Now</button>
+            </div>
+        </div>
+    </div>				
+      </div>
+      </div>
+    </div>
+	<!--calendar popup-->
+	
+	<!--footer-->
+	<footer id="footer">
+		<style>footer .item-header{color: #a19f9f !important;}</style>
+		<div class="wrap-footer-content footer-style-1">
+			<div class="coppy-right-box">
+				<div class="container">
+					<div class="coppy-right-item item-left">
+						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+					</div>
+					<div class="coppy-right-item item-right">
+						<div class="wrap-nav horizontal-nav">
+							<ul>
+								<li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>								
+								<li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a></li>
+								<li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms & Conditions</a></li>
+								<li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a></li>								
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+    <!--footer-->
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4"></script>
+<script src="assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.flexslider.js"></script>
+<script src="assets/js/chosen.jquery.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.countdown.min.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="assets/js/functions.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/home.js"></script>
+</html>

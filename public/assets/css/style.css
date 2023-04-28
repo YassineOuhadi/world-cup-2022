@@ -1,0 +1,50 @@
+.wrap-search .wrap-search-form button {
+    background-color:transparent;
+  }
+  .center-section .wrap-search-form button i {
+    color: #f2f2f2b3;
+  }
+  .center-section .wrap-search-form .wrap-list-cate .list-cate li.level-0 {
+    color:#f2f2f2;
+    background: var(--bl2);
+  }
+  .primary > .menu-item.home-icon {
+      background: transparent;
+  }
+  .wrap-show-advance-info-box.play .product.product-style-2 .product-thumnail {
+    background: radial-gradient(ellipse at center, black, #080808);
+  }
+  .primary .menu-item.active a {
+    color: var(--rd1);
+  }
+  .nav.primary .menu-item:first-child .link-term{
+    padding-left: 2px;
+  }
+  .header .main-info-area .center-section {
+    padding: 0;
+  }
+  .center-section .wrap-search-form {
+    max-width: 550px;
+  }
+  .center-section .wrap-search-form input[name="by"] {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .center-section .wrap-search-form input[name="by"] {
+    background-color: var(--bl2);
+    color: #f2f2f2;
+    border: none;
+    border-radius: 7px;
+  }
+  .center-section .wrap-search-form input[name="by"] {
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    color: #999999;
+    border: none;
+    padding: 0 20px;
+    height: 35px;
+  }
+  sup{
+      font-size: smaller;
+      vertical-align: super;
+  }
