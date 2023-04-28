@@ -1,5 +1,13 @@
 # World-Cup-App
-Node js, Express js, Sequelize js, Fuse js, JWT, Oracle
+This is a Node.js Express application that displays information about the World Cup using Sequelize js, Fuse js, JWT and Oracle.
+
+## Getting Started
+
+To get started with this application, follow these steps:
+
+1. Clone the repository to your local machine:
+
+git clone https://github.com/yourusername/worldcupapp.git
 
 ![w1](https://user-images.githubusercontent.com/109771302/235133800-db715f4d-db85-4e78-927a-e5c372b27b53.png)
 
