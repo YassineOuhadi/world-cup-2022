@@ -47,7 +47,7 @@ To run this application in a Docker container, follow these steps:
    
 5. Access the application in a web browser at `http://localhost:3000`.
 
-## Screenshots
+## Overview
 
 ![w1](https://user-images.githubusercontent.com/109771302/235133800-db715f4d-db85-4e78-927a-e5c372b27b53.png)
 
