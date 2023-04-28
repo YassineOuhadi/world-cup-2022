@@ -92,5 +92,3 @@ To run this application in a Docker container, follow these steps:
 ![w19](https://user-images.githubusercontent.com/109771302/235134327-9272237c-a1ce-47bb-b81e-d2bebbe2cd59.png)
 
 
-- Build the docker container using docker build -t worldcupapp .\n
-- Run the container using docker run -p 3000:3000 worldcupapp
