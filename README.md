@@ -1,4 +1,4 @@
-# World-Cup-App
+# World-Cup-Express-App
 This is a Node.js Express application that displays information about the World Cup using Sequelize js, Fuse js, JWT
 
 ## Getting Started
