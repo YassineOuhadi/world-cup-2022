@@ -11,16 +11,16 @@ To run this application in a Docker container, follow these steps:
    
 2. Navigate to the root directory of the application:
 
-   cd worldcupapp
+   `cd worldcupapp`
    
    
 3. Build the Docker container using the following command:
 
-   docker build -t worldcupapp .
+   `docker build -t worldcupapp .
    
 4. Run the container using the following command:
 
-   docker run -p 3000:3000 worldcupapp
+   `docker run -p 3000:3000 worldcupapp`
    
 5. Access the application in a web browser at `http://localhost:3000`.
 
