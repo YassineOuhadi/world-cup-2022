@@ -16,7 +16,7 @@ To run this application in a Docker container, follow these steps:
    
 3. Build the Docker container using the following command:
 
-   `docker build -t worldcupapp .
+   `docker build -t worldcupapp .`
    
 4. Run the container using the following command:
 
