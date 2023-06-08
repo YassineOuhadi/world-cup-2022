@@ -25,4 +25,7 @@ To run this application in a Docker container, follow these steps:
 5. Access the application in a web browser at `http://localhost:3000`.
 
 ## Overview
+
+![Screen Shot 2023-06-08 at 13 52 06](https://github.com/YassineOuhadi/World-Cup-Express-App/assets/109771302/f8539242-81db-4b90-9db2-a3bda50a03dc)
+
 ## License
