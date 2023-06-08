@@ -7,7 +7,7 @@ To run this application in a Docker container, follow these steps:
 
 1. Clone the repository to your local machine:
 
-   git clone github.com/YassineOuhadi/World-Cup-Express-App.git
+   `git clone http://github.com/YassineOuhadi/World-Cup-Express-App.git`
    
 2. Navigate to the root directory of the application:
 
