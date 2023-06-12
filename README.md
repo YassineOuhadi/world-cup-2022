@@ -26,6 +26,6 @@ To run this application in a Docker container, follow these steps:
 
 ## Overview
 
-![Screen Shot 2023-06-08 at 13 52 06](https://github.com/YassineOuhadi/World-Cup-Express-App/assets/109771302/59994635-b43a-4849-aaf8-8fd3da47ff48)
+![World-Cup-Express-App](https://github.com/YassineOuhadi/World-Cup-Express-App/assets/109771302/61184b6e-139f-412f-bcc1-6091682b8d82)
 
 ## License
