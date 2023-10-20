@@ -1,5 +1,5 @@
 # WorldCup2023 🇲🇦
-This is a Node.js Express application that displays information about the World Cup using Express.js, Sequelize.js, Fuse.js, JWT, AJAX & JQuery
+This is a Node.js Express application that displays information about the World Cup using Oracle, Express.js, Sequelize.js, Fuse.js, JWT, AJAX & JQuery
 
 ## Docker Container
 
